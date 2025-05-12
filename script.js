@@ -139,3 +139,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update countdown every second
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+ 
+
+// Card hover effect enhancement
+document.querySelectorAll('.event-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.querySelector('.image-overlay').style.opacity = '0.7';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.querySelector('.image-overlay').style.opacity = '1';
+    });
+});
