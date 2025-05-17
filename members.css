@@ -126,7 +126,7 @@ header {
     cursor: pointer;
     background: none;
     border: none;
-    color: var(--primary); /* #1F3C5F */
+    color: var(--primary);
     font-size: 1.8rem;
     padding: 10px;
     z-index: 1001;
@@ -134,21 +134,26 @@ header {
 }
 
 .hamburger:hover {
-    color: var(--accent); /* #F57C51 */
+    color: var(--accent);
+}
+
+.hamburger.active {
+    color: var(--accent);
 }
 
 .mobile-menu {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
+    top: 130px; /* Below header */
+    right: -320px;
+    width: 300px;
+    max-height: calc(100vh - 150px);
     background-color: var(--white);
-    box-shadow: -2px 0 15px rgba(31, 60, 95, 0.1); /* primary color with opacity */
+    box-shadow: -2px 5px 15px rgba(31, 60, 95, 0.2);
+    border-radius: 0 0 0 10px;
     z-index: 1000;
     transition: right 0.3s ease-in-out;
-    padding-top: 80px;
     overflow-y: auto;
+    padding: 20px 0;
 }
 
 .mobile-menu.active {
@@ -158,51 +163,58 @@ header {
 .mobile-links {
     list-style: none;
     padding: 0 20px;
+    margin: 0;
 }
 
 .mobile-links li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     opacity: 0;
     transform: translateX(20px);
     animation: slideIn 0.3s forwards;
 }
 
 .mobile-links a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 12px 15px;
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     border-radius: 5px;
     transition: all 0.3s ease;
-    border-left: 3px solid transparent;
+    background-color: rgba(107, 162, 217, 0.1);
 }
 
 .mobile-links a:hover {
-    background-color: rgba(107, 162, 217, 0.1); /* secondary color with opacity */
-    color: var(--accent);
-    border-left: 3px solid var(--accent);
+    background-color: var(--secondary);
+    color: var(--white);
 }
 
-.mobile-links li.active a {
-    color: var(--accent);
-    font-weight: 600;
-    border-left: 3px solid var(--accent);
+.mobile-links a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
 }
 
-.mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(31, 60, 95, 0.5); /* primary with opacity */
-    z-index: 999;
-    display: none;
+/* Shopping cart in mobile */
+.mobile-links li:last-child {
+    background-color: var(--accent);
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
-.mobile-menu-overlay.active {
-    display: block;
+.mobile-links li:last-child a {
+    color: var(--white);
+    background-color: transparent;
+}
+
+.mobile-links li:last-child a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Disable scrolling when menu is open */
+.no-scroll {
+    overflow: hidden;
 }
 
 /* Animations */
@@ -221,8 +233,17 @@ header {
 .mobile-links li:nth-child(5) { animation-delay: 0.3s; }
 .mobile-links li:nth-child(6) { animation-delay: 0.35s; }
 .mobile-links li:nth-child(7) { animation-delay: 0.4s; }
-.mobile-links li:nth-child(8) { animation-delay: 0.45; }
-        
+
+/* Responsive - Show hamburger on mobile */
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+}
 /* Responsive Styles */
 @media (max-width: 992px) {
             .nav-links {
@@ -255,6 +276,39 @@ header {
             .social-icons a {
                 margin: 0 8px;
             }
+}
+
+/* Shopping cart icon styles */
+.nav-links li a i.fa-shopping-cart {
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+.mobile-links li a i.fa-shopping-cart {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Optional: Add a badge for cart items */
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* If you want to add a badge later */
+.nav-links li .cart-with-badge {
+    position: relative;
+    display: inline-block;
 }
 
 /* Updated New Members Intro */
@@ -329,8 +383,7 @@ header {
     padding-top: 70px;
 }
 
-.process-step::before {
-    content: '';
+.process-step::before { 
     position: absolute;
     top: 0;
     left: 50%;
@@ -577,6 +630,79 @@ header {
     
     .cta-features {
         justify-content: center;
+    }
+}
+
+/* Process Steps - Mobile Styles */
+@media (max-width: 768px) {
+    .process-steps-container {
+        padding: 20px 15px;
+        position: relative;
+    }
+
+    .process-line {
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--secondary);
+        z-index: 1;
+    }
+
+    .process-step {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 70px;
+        z-index: 2;
+    }
+
+    .step-number {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border: 3px solid var(--white);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .process-step h3 {
+        color: var(--primary);
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .process-step p {
+        color: var(--text);
+        font-size: 0.9rem;
+        line-height: 1.4;
+        background: rgba(107, 162, 217, 0.1);
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* Highlight the price in the text */
+    .process-step p strong {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* Specific adjustments for each step */
+    .process-step.first {
+        margin-top: 10px;
+    }
+
+    .process-step.third {
+        margin-bottom: 0;
     }
 }
 
