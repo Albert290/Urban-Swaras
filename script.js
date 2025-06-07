@@ -144,3 +144,63 @@ document.querySelectorAll('.event-card').forEach(card => {
         this.querySelector('.image-overlay').style.opacity = '1';
     });
 });
+
+// Timeline Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate timeline items on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(20px)';
+        item.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+        timelineObserver.observe(item);
+    });
+    
+    // Dynamic year display for timeline badges
+    timelineItems.forEach(item => {
+        const year = item.getAttribute('data-year');
+        const badge = item.querySelector('.timeline-badge');
+        
+        item.addEventListener('mouseenter', () => {
+            const originalContent = badge.textContent;
+            badge.setAttribute('data-original', originalContent);
+            badge.textContent = year;
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            const original = badge.getAttribute('data-original');
+            badge.textContent = original;
+        });
+    });
+    
+    // Mission cards animation
+    const missionCards = document.querySelectorAll('.mission-card');
+    
+    const missionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 150);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    missionCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        missionObserver.observe(card);
+    });
+});
+
