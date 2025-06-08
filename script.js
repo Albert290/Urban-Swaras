@@ -71,31 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(hero);
 });
 
-// Animate counting numbers
-function animateNumbers() {
-    const achievementNumbers = document.querySelectorAll('.number');
-    const duration = 2000; // Animation duration in ms
-    const startTime = Date.now();
-    
-    achievementNumbers.forEach(numberElement => {
-        const targetNumber = parseInt(numberElement.textContent);
-        const startNumber = 0;
-        const prefix = numberElement.textContent.match(/[+]/)?.[0] || '';
-        
-        const animate = () => {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const currentNumber = Math.floor(progress * (targetNumber - startNumber) + startNumber);
-            numberElement.textContent = prefix + currentNumber;
-            
-            if (progress < 1) {
-                requestAnimationFrame(animate);
-            }
-        };
-        
-        animate();
-    });
-}
 
 // Trigger when hero section is in view
 document.addEventListener('DOMContentLoaded', function() {
@@ -111,96 +86,291 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(document.querySelector('.hero'));
 });
 
-// Countdown Timer
-    function updateCountdown() {
-        const eventDate = new Date("May 24, 2025 06:00:00").getTime();
-        const now = new Date().getTime();
-        const distance = eventDate - now;
-        
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        document.getElementById("days").textContent = days.toString().padStart(2, "0");
-        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
-    }
-    
-    // Update countdown every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+// Toggle expandable content
+        function toggleContent() {
+            const content = document.getElementById('expandableContent');
+            const button = document.querySelector('.read-more-btn');
+            const buttonText = document.getElementById('readMoreText');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                button.classList.remove('expanded');
+                buttonText.textContent = 'Read More About Us';
+            } else {
+                content.classList.add('expanded');
+                button.classList.add('expanded');
+                buttonText.textContent = 'Show Less';
+            }
+        }
 
- 
+        // Animated counter for achievement numbers
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (target >= 200 ? '+' : '+');
+            }, 20);
+        }
 
-// Card hover effect enhancement
-document.querySelectorAll('.event-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.querySelector('.image-overlay').style.opacity = '0.7';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.querySelector('.image-overlay').style.opacity = '1';
-    });
-});
+        // Initialize counters when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.number');
+            
+            // Intersection Observer to trigger animation when in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.getAttribute('data-count'));
+                        animateCounter(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
 
-// Timeline Animation
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hide scroll indicator when user scrolls
+        window.addEventListener('scroll', function() {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+        });
+
+// Simple Our Story Section JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Animate timeline items on scroll
-    const timelineItems = document.querySelectorAll('.timeline-item');
     
-    const timelineObserver = new IntersectionObserver((entries) => {
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
+                entry.target.classList.add('animate-in');
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
+
+    // Observe story content
+    const storyContent = document.querySelector('.story-content');
+    if (storyContent) {
+        observer.observe(storyContent);
+    }
+
+    // Timeline point interactions
+    const timelinePoints = document.querySelectorAll('.timeline-point');
     
-    timelineItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(20px)';
-        item.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
-        timelineObserver.observe(item);
-    });
-    
-    // Dynamic year display for timeline badges
-    timelineItems.forEach(item => {
-        const year = item.getAttribute('data-year');
-        const badge = item.querySelector('.timeline-badge');
-        
-        item.addEventListener('mouseenter', () => {
-            const originalContent = badge.textContent;
-            badge.setAttribute('data-original', originalContent);
-            badge.textContent = year;
+    timelinePoints.forEach(point => {
+        // Click effect
+        point.addEventListener('click', function() {
+            // Remove active class from all points
+            timelinePoints.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked point
+            this.classList.add('active');
+            
+            // Create ripple effect
+            createRipple(this);
         });
-        
-        item.addEventListener('mouseleave', () => {
-            const original = badge.getAttribute('data-original');
-            badge.textContent = original;
+
+        // Enhanced hover effects
+        point.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.05)';
+        });
+
+        point.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
+
+    // Ripple effect function
+    function createRipple(element) {
+        const ripple = document.createElement('div');
+        const rect = element.getBoundingClientRect();
+        
+        ripple.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: rgba(245, 124, 81, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: ripple-expand 0.6s ease-out;
+            pointer-events: none;
+            z-index: 1;
+        `;
+        
+        element.style.position = 'relative';
+        element.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 600);
+    }
+
+    // Add CSS animation for ripple
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple-expand {
+            to {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .timeline-point.active .point-icon {
+            background: var(--accent) !important;
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(245, 124, 81, 0.5);
+        }
+        
+        .timeline-point.active .point-icon i {
+            color: var(--white) !important;
+        }
+        
+        .timeline-point.active .point-year,
+        .timeline-point.active .point-label {
+            background: var(--secondary) !important;
+            color: var(--white) !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Smooth scroll reveal for paragraphs
+    const paragraphs = document.querySelectorAll('.story-paragraph');
     
-    // Mission cards animation
-    const missionCards = document.querySelectorAll('.mission-card');
-    
-    const missionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+    const paragraphObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 150);
+                entry.target.style.animationPlayState = 'running';
             }
         });
     }, { threshold: 0.1 });
+
+    paragraphs.forEach(paragraph => {
+        paragraph.style.animationPlayState = 'paused';
+        paragraphObserver.observe(paragraph);
+    });
+
+    // Timeline line animation on scroll
+    const timelineLine = document.querySelector('.timeline-line');
+    const timelineContainer = document.querySelector('.timeline-container');
     
-    missionCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease-out';
-        missionObserver.observe(card);
+    const lineObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                timelineLine.style.animationPlayState = 'running';
+                
+                // Stagger timeline point animations
+                timelinePoints.forEach((point, index) => {
+                    setTimeout(() => {
+                        point.style.animationPlayState = 'running';
+                    }, index * 200);
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    if (timelineContainer) {
+        timelineLine.style.animationPlayState = 'paused';
+        timelinePoints.forEach(point => {
+            point.style.animationPlayState = 'paused';
+        });
+        lineObserver.observe(timelineContainer);
+    }
+
+    // Add subtle parallax effect to story content
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const storySection = document.querySelector('.our-story');
+        
+        if (storySection) {
+            const rect = storySection.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                const rate = scrolled * 0.1;
+                storyContent.style.transform = `translateY(${rate}px)`;
+            }
+        }
+    });
+
+    // Auto-highlight timeline points as user scrolls through paragraphs
+    const highlightTimeline = function() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        
+        paragraphs.forEach((paragraph, index) => {
+            const rect = paragraph.getBoundingClientRect();
+            const absoluteTop = rect.top + window.scrollY;
+            
+            if (scrollPosition >= absoluteTop && scrollPosition < absoluteTop + paragraph.offsetHeight) {
+                // Highlight corresponding timeline point
+                timelinePoints.forEach(point => point.classList.remove('highlight'));
+                if (timelinePoints[index]) {
+                    timelinePoints[index].classList.add('highlight');
+                }
+            }
+        });
+    };
+
+    // Add highlight styles
+    const highlightStyle = document.createElement('style');
+    highlightStyle.textContent = `
+        .timeline-point.highlight .point-icon {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            animation: pulse-highlight 2s ease-in-out infinite;
+        }
+        
+        .timeline-point.highlight .point-icon i {
+            color: var(--white);
+        }
+        
+        @keyframes pulse-highlight {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    `;
+    document.head.appendChild(highlightStyle);
+
+    // Throttled scroll listener
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(highlightTimeline, 10);
     });
 });
-

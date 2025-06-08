@@ -9,7 +9,7 @@
     
         
 </head>
-<>
+ 
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="next-event">
@@ -69,148 +69,187 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+   <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-icon">🏃‍♂️</div>
+            <div class="floating-icon">🏃‍♀️</div>
+            <div class="floating-icon">🏆</div>
+            <div class="floating-icon">⚡</div>
+        </div>
+
         <div class="hero-content">
             <h1>Welcome to Urban Swaras</h1>
             <p class="tagline">Nairobi's Premier Running Community Since 2006</p>
-            <p class="description">We organize weekly runs in Nairobi and scenic locations across Kenya,<br> welcoming runners of all levels from beginners to semi-elite athletes.</p>
-             
-            <div class="cta-buttons">
-               <a href="members.html#memberform" class="btn primary">Become a Member</a>
-               <a href="guest.html" class="btn secondary">Join as Guest</a>
+            <p class="main-description">
+                Based in Nairobi, we are a vibrant community of runners who meet every Saturday for organized runs in and around the city, as well as scenic out-of-town adventures across Kenya.
+            </p>
+            
+            <div class="expandable-content" id="expandableContent">
+                <p>
+                    Our mission is to promote recreational running in Kenya and create a welcoming space for runners of all levels — from beginners finding their stride to semi-elites chasing personal bests.
+                </p>
+                <p>
+                    At Urban Swaras, it's not just about the miles — it's about the journey. Over the years, beginners have surprised themselves by running distances they never imagined, others have shed weight, gained fitness, and many have found joy and purpose through running.
+                </p>
+                <p>
+                    Our members have taken part in both local and international races, including the Lewa Marathon, Nairobi Marathon, Kilimanjaro Marathon, Two Oceans Ultra Marathon, Victoria Falls Marathon, Kampala Marathon, Kigali Marathon, Chicago Marathon, New York Marathon, Paris Marathon, Florence Marathon, Leadville 100, and many more.
+                </p>
+                <p>
+                    <strong>Whatever your goal — fitness, friendship, or finish lines — you'll find your stride with us.</strong>
+                </p>
             </div>
 
+            <button class="read-more-btn" onclick="toggleContent()">
+                <span id="readMoreText">Read More About Us</span>
+                <span class="arrow">↓</span>
+            </button>
 
+            <div class="cta-buttons">
+                <a href="members.html#memberform" class="btn primary">Become a Member</a>
+                <a href="guest.html" class="btn secondary">Join as Guest</a>
+            </div>
 
             <div class="achievements">
                 <div class="achievement-item">
-                    <span class="number">19+</span>
+                    <span class="number" data-count="19">0</span>
                     <span class="label">Years Running</span>
                 </div>
                 <div class="achievement-item">
-                    <span class="number">52+</span>
+                    <span class="number" data-count="52">0</span>
                     <span class="label">Events Yearly</span>
                 </div>
                 <div class="achievement-item">
-                    <span class="number">200+</span>
+                    <span class="number" data-count="200">0</span>
                     <span class="label">Active Members</span>
                 </div>
             </div>
         </div>
+
         <div class="hero-image">
-            <img src="images/33964395238_aa337e6e8f_o-768x513.jpg" alt="Urban Swaras running group">
+            <img src="images/33964395238_aa337e6e8f_o-768x513.jpg" alt="Urban Swaras running group in action">
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <span>↓</span>
         </div>
     </section>
 
- <section class="story-mission">
-    <!-- Our Story Section -->
-    <div class="story-section">
+  <!-- Our Story Section -->
+    <section class="our-story">
         <div class="container">
+            <!-- Section Header -->
+            <div class="story-header">
+                <h2 class="section-title">Our Story</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Story Content -->
             <div class="story-content">
-                <h2>Our <span class="highlight">Story</span></h2>
-                <div class="story-text">
-                    <p>In 2006, five passionate runners began meeting at dawn in Nairobi's suburbs, bonding over shared miles and post-run breakfasts. What started as informal gatherings soon grew into something extraordinary.</p>
-                    
-                    <div class="milestone-highlight">
-                        <img src="icons/runner-group.svg" alt="" class="runner-group-icon">
-                        <p>"The name <strong>Urban Swaras</strong> emerged from our love for the city's energy ('Urban') and the Swahili word for antelope ('Swaras') - symbolizing our members' grace and endurance."</p>
+                <p class="story-paragraph">
+                    Urban Swaras Running Club began in 2006 with just five enthusiastic runners. What brought them together was simple — the desire to keep fit and enjoy each other's company. Every Saturday, they would gather at one of their homes, start and end their run there, and then share a hearty breakfast. This tradition created strong bonds and soon, the group began to grow.
+                </p>
+                
+                <p class="story-paragraph">
+                    Friends invited friends, and the Saturday runs became a weekly ritual that kept expanding. As the numbers increased, it became practical to meet at restaurants instead of homes, but the spirit of community and shared purpose remained.
+                </p>
+                
+                <p class="story-paragraph">
+                    With the growth came the need for identity. Inspired by the grace and speed of antelopes — and the fact that they ran in the city — the name <em>Urban Swaras</em> was born, symbolizing "urban antelopes."
+                </p>
+                
+                <p class="story-paragraph">
+                    The Urban Swaras Running Club was officially registered as a business name in 2011, and later under the Societies Act in 2021, formalizing what had grown from a small circle of friends into one of Kenya's most vibrant recreational running communities.
+                </p>
+            </div>
+
+            <!-- Horizontal Timeline -->
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-items">
+                    <div class="timeline-point" data-year="2006" data-title="The Beginning">
+                        <div class="point-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="point-year">2006</span>
                     </div>
                     
-                    <p>By 2011, we officially registered as a club, moving from home porches to restaurants. Today, we're 100+ strong, with members competing globally while keeping our grassroots spirit alive.</p>
-                </div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item" data-year="2006">
-                    <div class="timeline-badge">🌄</div>
-                    <h3>First Runs</h3>
-                    <p>5 runners, 1 shared passion</p>
-                </div>
-                
-                <div class="timeline-item" data-year="2011">
-                    <div class="timeline-badge">📝</div>
-                    <h3>Official Club</h3>
-                    <p>Registered with Athletics Kenya</p>
-                </div>
-                
-                <div class="timeline-item" data-year="2024">
-                    <div class="timeline-badge">🌍</div>
-                    <h3>Global Presence</h3>
-                    <p>Members in 10+ countries</p>
+                    <div class="timeline-point" data-year="Early Days" data-title="Saturday Tradition">
+                        <div class="point-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span class="point-label">Saturday Runs</span>
+                    </div>
+                    
+                    <div class="timeline-point" data-year="Growth" data-title="Community Expansion">
+                        <div class="point-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="point-label">Growth</span>
+                    </div>
+                    
+                    <div class="timeline-point" data-year="Identity" data-title="Urban Swaras Name">
+                        <div class="point-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <span class="point-label">Urban Swaras</span>
+                    </div>
+                    
+                    <div class="timeline-point" data-year="2011" data-title="Official Registration">
+                        <div class="point-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span class="point-year">2011</span>
+                    </div>
+                    
+                    <div class="timeline-point" data-year="2021" data-title="Societies Act Registration">
+                        <div class="point-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span class="point-year">2021</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Mission & Vision Section -->
-    <div class="mission-section">
-        <div class="container">
-            <div class="mission-card">
-                <img src="icons/target.svg" alt="Mission Icon" class="card-icon">
-                <h3>Our Mission</h3>
-                <p>To make running accessible and enjoyable for all Kenyans, creating a supportive community where every stride counts.</p>
-            </div>
-            
-            <div class="mission-card">
-                <img src="icons/binoculars.svg" alt="Vision Icon" class="card-icon">
-                <h3>Our Vision</h3>
-                <p>To be East Africa's most inclusive running collective, where beginners and elites share the same trails.</p>
-            </div>
-            
-            <div class="mission-card">
-                <img src="icons/heart.svg" alt="Values Icon" class="card-icon">
-                <h3>Core Values</h3>
-                <ul>
-                    <li>Community over competition</li>
-                    <li>Joy in the journey</li>
-                    <li>Respect for all paces</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
-<section class="testimonials" style="background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);">
-    <div class="container">
-        <h2>Runners' Voices</h2>
-        <p class="subtitle">What our members say</p>
+<div class="testimonials-section">
+        <h2 class="section-title">Reviews from Our Members</h2>
         
-        <div class="testimonial-slider">
-            <div class="slider-track">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card active">
-                    <div class="runner-info">  <div>
-                            <h4>Davis</h4>
-                            <p>Member since 2018</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
-                        When I joined the club, even 21km felt like a struggle. I never thought I could go beyond a half marathon — until a fellow Swara told me I was underrating myself. Seeing others push past limits, I had a wake-up call. Since then, I’ve run over twenty full marathons and a few ultras. This club has made running my lifestyle.
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="runner-info"> <div>
-                            <h4>Pascal</h4>
-                            <p>Member since 2015</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-text">
+        <div class="slider-container">
+            <div class="slide active">
+                <div class="slide-number"> </div>
+                <button class="pause-btn" onclick="toggleAutoSlide()">⏸️ Pause</button>
+                <div class="running-icon">🏃‍♂️</div>
+                <div class="testimonial-content">
+                    <p >
                         I joined Urban Swaras earlier this year, just hoping to spice up my running journey. Instead, I found a family that nudged me to be better. Members guided me into structured coaching, better running habits, and deeper discipline.
-                    </div>
-                </div> 
+                    </p>
+                    <p class="author">Pascal</p>
+                </div>
             </div>
             
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span> 
+            <div class="slide">
+                <div class="slide-number"> </div>
+                <button class="pause-btn" onclick="toggleAutoSlide()">⏸️ Pause</button>
+                <div class="running-icon">🏃‍♀️</div>
+                <div class="testimonial-content">
+                    <p  >
+                        When I joined the club, even 21km felt like a struggle. I never thought I could go beyond a half marathon — until a fellow Swara told me I was underrating myself. Seeing others push past limits, I had a wake-up call. Since then, I've run over twenty full marathons and a few ultras. This club has made running my lifestyle.
+                    </p>
+                    <p class="author">Davis</p>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
             </div>
         </div>
     </div>
-</section>
+
+    
 
 <footer class="site-footer">
     <div class="footer-container">
@@ -270,54 +309,136 @@
         </div>
     </div>
 </footer> 
-<script>document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.testimonial-card');
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
-    
-    // Initialize first card
-    cards[currentIndex].classList.add('active');
-    dots[currentIndex].classList.add('active');
-    
-    // Auto-rotate every 5 seconds
-    const interval = setInterval(rotateTestimonials, 5000);
-    
-    function rotateTestimonials() {
-        // Fade out current card
-        cards[currentIndex].classList.remove('active');
-        dots[currentIndex].classList.remove('active');
-        
-        // Move to next card
-        currentIndex = (currentIndex + 1) % cards.length;
-        
-        // Fade in new card
-        cards[currentIndex].classList.add('active');
-        dots[currentIndex].classList.add('active');
-    }
-    
-    // Click handler for dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            clearInterval(interval);
-            
-            // Fade out current card
-            cards[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
-            
-            // Move to selected card
-            currentIndex = index;
-            
-            // Fade in new card
-            cards[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-            
-            // Restart auto-rotation
+<script>
+        let slideIndex = 0;
+        let autoSlideInterval;
+        let isAutoSliding = true;
+
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const pauseBtn = document.querySelector('.pause-btn');
+
+        function showSlide(index) {
+            // Remove active class from all slides and dots
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Add prev class to current slide before switching
+            if (slides[slideIndex]) {
+                slides[slideIndex].classList.add('prev');
+            }
+
+            // Update slide index
+            slideIndex = index;
+
+            // Show new slide with animation
             setTimeout(() => {
-                interval = setInterval(rotateTestimonials, 2000);
-            }, 5000); // Longer pause after manual selection
+                slides[slideIndex].classList.add('active');
+                dots[slideIndex].classList.add('active');
+            }, 100);
+
+            // Update slide numbers
+            document.querySelectorAll('.slide-number').forEach((num, i) => {
+                num.textContent = `${slideIndex + 1} / ${slides.length}`;
+            });
+        }
+
+        function nextSlide() {
+            const next = (slideIndex + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function currentSlide(index) {
+            showSlide(index - 1);
+            resetAutoSlide();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        function resetAutoSlide() {
+            if (isAutoSliding) {
+                stopAutoSlide();
+                startAutoSlide();
+            }
+        }
+
+        function toggleAutoSlide() {
+            if (isAutoSliding) {
+                stopAutoSlide();
+                isAutoSliding = false;
+                pauseBtn.innerHTML = '▶️ Play';
+                pauseBtn.style.background = 'rgba(245, 124, 81, 0.3)';
+            } else {
+                startAutoSlide();
+                isAutoSliding = true;
+                pauseBtn.innerHTML = '⏸️ Pause';
+                pauseBtn.style.background = 'rgba(255, 255, 255, 0.2)';
+            }
+        }
+
+        // Initialize
+        startAutoSlide();
+
+        // Pause on hover
+        document.querySelector('.slider-container').addEventListener('mouseenter', () => {
+            if (isAutoSliding) stopAutoSlide();
         });
-    });
-});</script>
+
+        document.querySelector('.slider-container').addEventListener('mouseleave', () => {
+            if (isAutoSliding) startAutoSlide();
+        });
+
+        // Add touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        document.querySelector('.slider-container').addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        document.querySelector('.slider-container').addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const difference = startX - endX;
+            if (Math.abs(difference) > 50) { // Minimum swipe distance
+                if (difference > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    const prev = slideIndex === 0 ? slides.length - 1 : slideIndex - 1;
+                    showSlide(prev);
+                }
+                resetAutoSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                const prev = slideIndex === 0 ? slides.length - 1 : slideIndex - 1;
+                showSlide(prev);
+                resetAutoSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoSlide();
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                toggleAutoSlide();
+            }
+        });
+    </script>
  <script src="script.js"></script>
 </body>
 </html>
