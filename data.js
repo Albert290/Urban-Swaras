@@ -75,3 +75,108 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.accordion-content').style.maxHeight = 
             document.querySelector('.accordion-content').scrollHeight + 'px';
 });
+
+// Toggle document viewer
+        function toggleDocument(type) {
+            const viewer = document.getElementById('privacy-viewer');
+            const isVisible = viewer.style.display === 'block';
+            
+            if (isVisible) {
+                closeDocument();
+            } else {
+                viewer.style.display = 'block';
+                viewer.scrollIntoView({ behavior: 'smooth' });
+                // Add animation
+                setTimeout(() => {
+                    viewer.classList.add('animate-in');
+                }, 100);
+            }
+        }
+
+        function closeDocument() {
+            const viewer = document.getElementById('privacy-viewer');
+            viewer.classList.remove('animate-in');
+            setTimeout(() => {
+                viewer.style.display = 'none';
+            }, 300);
+        }
+
+        // Toggle dropdown menus
+        function toggleDropdown(type) {
+            const dropdown = document.getElementById(type + '-dropdown');
+            const allDropdowns = document.querySelectorAll('.dropdown-menu');
+            
+            // Close all other dropdowns
+            allDropdowns.forEach(menu => {
+                if (menu !== dropdown) {
+                    menu.classList.remove('show');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('show');
+        }
+
+        // Download functionality with notification
+        function downloadDocument(type) {
+            showDownloadNotification();
+            
+            // Simulate download (in real implementation, this would trigger actual file download)
+            console.log('Downloading:', type);
+            
+            // Close any open dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+
+        function showDownloadNotification() {
+            const notification = document.getElementById('downloadNotification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.download-card')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+
+        // Scroll animations
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.download-card');
+            
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.classList.add('animate-in');
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Add hover effects to cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.download-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });

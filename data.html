@@ -36,10 +36,10 @@
             <nav class="desktop-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="calendar.html">Calendar of Events</a></li>
-                    <li><a href="members.html">New Members</a></li>
-                    <li><a href="regulation.html">Club Regulations</a></li>
-                    <li class="active"><a href="data.html">Data Privacy</a></li>
+                    <li><a href="calendar.html">Events</a></li>
+                    <li><a href="regulation.html">Governance</a></li>
+                    <li><a href="members.html">Membership</a></li>
+                    <li class="active"><a href="data.html">Downloads</a></li>
                     <li><a href="contact.html">Contact</a></li> 
                     <li><a href="#" title="Shop"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
@@ -54,145 +54,219 @@
         <div class="mobile-menu">
             <ul class="mobile-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html">Calendar of Events</a></li>
-                <li><a href="members.html">New Members</a></li>
-                <li><a href="regulation.html">Club Rules/Regulations</a></li>
-                <li><a href="data.html">Data Privacy</a></li>
-                <li><a href="contact.html">Contact Us</a></li> 
+                <li><a href="calendar.html">Events</a></li>
+                <li><a href="regulation.html">Governance</a></li>
+                <li><a href="members.html">Membership</a></li>
+                <li><a href="data.html">Downloads</a></li>
+                <li><a href="contact.html">Contact</a></li> 
                 <li><a href="#" title="Shop"><i class="fas fa-shopping-cart"></i> Shop</a></li>
             </ul>
         </div>
-    </header>
- 
-    <header class="privacy-headerr">
-        <div class="container">
-            <h1>Data Privacy Notice</h1>
-            <p>How we collect, protect, and manage your personal information</p>
+    </header> 
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Downloads Section -->
+        <section class="downloads-section">
+            <h2 class="section-title">Club Documents & Resources</h2>
+            
+            <div class="downloads-grid">
+                <!-- Data Privacy Notice -->
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Data Privacy Notice</h3>
+                        <p class="card-description">Learn how we protect and manage your personal information</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn view-btn" onclick="toggleDocument('privacy')">
+                            <i class="fas fa-eye"></i> View Document
+                        </button>
+                        <button class="action-btn download-btn" onclick="downloadDocument('privacy')">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Club Constitution -->
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Club Constitution</h3>
+                        <p class="card-description">Official governing document of Urban Swaras Running Club</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn download-btn" onclick="downloadDocument('constitution')">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Club Rules and Regulations -->
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fas fa-list-check"></i>
+                        <h3>Club Rules and Regulations</h3>
+                        <p class="card-description">Guidelines and policies for all club members</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn download-btn" onclick="downloadDocument('rules')">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- New Member Sign Up Form -->
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-plus"></i>
+                        <h3>New Member Sign Up Form</h3>
+                        <p class="card-description">Registration form for new club members</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn download-btn" onclick="downloadDocument('signup')">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Financials -->
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Financials</h3>
+                        <p class="card-description">Annual financial statements and reports</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn dropdown-btn" onclick="toggleDropdown('financials')">
+                            <i class="fas fa-chevron-down"></i> Select Year
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="financials-dropdown">
+                        <button class="dropdown-item" onclick="downloadDocument('financials-2024')">
+                            <i class="fas fa-file-pdf"></i> 2024 Financial Report
+                        </button>
+                        <button class="dropdown-item" onclick="downloadDocument('financials-2023')">
+                            <i class="fas fa-file-pdf"></i> 2023 Financial Report
+                        </button>
+                        <button class="dropdown-item" onclick="downloadDocument('financials-2022')">
+                            <i class="fas fa-file-pdf"></i> 2022 Financial Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AGM Minutes -->
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>AGM Minutes</h3>
+                        <p class="card-description">Annual General Meeting minutes and resolutions</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn dropdown-btn" onclick="toggleDropdown('agm')">
+                            <i class="fas fa-chevron-down"></i> Select Year
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="agm-dropdown">
+                        <button class="dropdown-item" onclick="downloadDocument('agm-2024')">
+                            <i class="fas fa-file-pdf"></i> 2024 AGM Minutes
+                        </button>
+                        <button class="dropdown-item" onclick="downloadDocument('agm-2023')">
+                            <i class="fas fa-file-pdf"></i> 2023 AGM Minutes
+                        </button>
+                        <button class="dropdown-item" onclick="downloadDocument('agm-2022')">
+                            <i class="fas fa-file-pdf"></i> 2022 AGM Minutes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Privacy Document Viewer -->
+        <section class="document-viewer" id="privacy-viewer">
+            <div class="document-header">
+                <h2>Data Privacy Notice</h2>
+                <button class="close-btn" onclick="closeDocument()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="download-floating-btn" onclick="downloadDocument('privacy')">
+                    <i class="fas fa-download"></i> Download PDF Version
+                </button>
+            </div>
+            
+            <div class="document-content">
+                <div class="privacy-document">
+                    <h1>URBAN SWARAS RUNNING CLUB</h1>
+                    <h2>DATA PRIVACY NOTICE</h2>
+                    
+                    <p class="intro-text">We are Urban Swaras Running Club, a voluntary association of runners who meet regularly for training, runs and other social events. We value your privacy and respect your rights as a data subject under the Data Protection Act, 2019. This notice explains how we collect, use, and protect your personal data, and what choices you have regarding your data.</p>
+                    
+                    <div class="section">
+                        <h3>1.0 What personal data do we collect and why?</h3>
+                        <p>We collect or otherwise process the following personal data from you when you join our club, register to participate in or participate in our runs or other events:</p>
+                        <ul>
+                            <li>Your name, email address, phone number, and date of birth, to identify you as a member or participant, communicate with you, and verify your eligibility for age-based categories.</li>
+                            <li>Your gender, to assign you to the appropriate gender-based categories.</li>
+                            <li>Your health information, such as any medical conditions, allergies, or injuries that may affect your participation or require emergency assistance.</li>
+                            <li>Emergency contacts information such as names and phone numbers in case we may need to contact them.</li>
+                            <li>Photos and videos of event participants to publish on our website, social media and newsletters.</li>
+                            <li>Your running performance data, such as your race results, personal bests, and training logs, to monitor your progress, provide feedback, and recognize your achievements.</li>
+                        </ul>
+                        <p>We collect your personal data with your consent, which you can withdraw at any time by contacting us. We also collect your personal data to fulfil our legitimate interests as a running club, such as organizing runs or other events, promoting our activities, and maintaining our records. If you fail to provide us with your personal data, we may be unable to register you as our member or to facilitate your participation in our runs or other events.</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>2.0 How do we use your personal data?</h3>
+                        <p>We use your personal data for the following purposes:</p>
+                        <ul>
+                            <li>To register you as a member of our club and maintain your membership records.</li>
+                            <li>To communicate with you about our club activities, events, news, and updates.</li>
+                            <li>To provide you with coaching, training, and support services.</li>
+                            <li>To register you as a participant in our runs and other events.</li>
+                            <li>To publish your results, photos and videos on our website, social media platforms and newsletters.</li>
+                            <li>To comply with any legal or regulatory obligations that may apply to us.</li>
+                        </ul>
+                        <p>We do not use your personal data for any other purposes than those stated in this notice, unless we obtain your prior consent or we are required or permitted by law to do so.</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>3.0 How do we protect your personal data?</h3>
+                        <p>We take appropriate technical and organizational measures to protect your personal data from unauthorized access, use, disclosure, alteration, or destruction and we limit access to your personal data to only those club officials and other persons who need to know it for the purposes stated in this notice.</p>
+                        <p>We do not share your personal data with any third parties or use it for commercial purposes, except as necessary for the purposes stated in this notice, such as race organizers, results providers, and governing bodies. We do not transfer your personal data outside Kenya, unless we have your consent or we are required or permitted by law to do so.</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>4.0 How long do we keep your personal data?</h3>
+                        <p>We keep your personal data for as long as you are a member of our club, or as long as necessary for the purposes stated in this notice, or as required or permitted by law. We delete or anonymize your personal data when it is no longer needed, or when you request us to do so.</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>5.0 What are your rights regarding your personal data?</h3>
+                        <p>You have the following rights regarding your personal data under the Data Protection Act, 2019:</p>
+                        <ul>
+                            <li>the right to access your personal data and obtain a copy of it.</li>
+                            <li>the right to rectify any inaccurate or incomplete personal data.</li>
+                            <li>the right to erase your personal data or restrict its processing, subject to certain exceptions.</li>
+                            <li>the right to object to the processing of all or part of your personal data, subject to certain exceptions.</li>
+                            <li>the right to data portability, which means to receive your personal data in a structured, commonly used, and machine-readable format, and to transmit it to another data controller.</li>
+                            <li>the right to withdraw your consent at any time, without affecting the lawfulness of the processing based on your consent before its withdrawal.</li>
+                        </ul>
+                        <p>To exercise any of these rights, or if you have any questions or concerns about this notice or your personal data, please contact us through our email address: <a href="mailto:urbanswaras@outlook.com">urbanswaras@outlook.com</a></p>
+                        <p>We may update this notice from time to time to reflect any changes in our practices or in the law. We will notify you of any material changes by email or by posting the updated notice on our website.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Download Notification -->
+    <div id="downloadNotification" class="download-notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Download started successfully!</span>
         </div>
-    </header>
-
-    <main class="privacy-main">
-        <div class="container">
-            <section class="privacy-accordion">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2><i class="fas fa-database"></i> Data Collection & Usage</h2>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <table class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>Data Type</th>
-                                        <th>Purpose</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Name, Email, Phone</td>
-                                        <td>Member identification and communication</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gender</td>
-                                        <td>Category assignment for events</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Health Information</td>
-                                        <td>Safety during runs and emergencies</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Emergency Contacts</td>
-                                        <td>Emergency situations</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Photos/Videos</td>
-                                        <td>Club promotion and documentation</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Performance Data</td>
-                                        <td>Tracking progress and achievements</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="notice-box" style="background-color: var(--secondary-light); padding: 15px; border-radius: 6px; border-left: 4px solid var(--secondary);">
-                                <p><i class="fas fa-info-circle" style="color: var(--primary);"></i> We collect this data with your consent, which you can withdraw anytime.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2><i class="fas fa-shield-alt"></i> Data Protection</h2>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <div class="protection-points">
-                                <div class="right-card" style="border-top-color: var(--primary);">
-                                    <h3><i class="fas fa-lock"></i> Restricted Access</h3>
-                                    <p>Only authorized club officials can access sensitive data</p>
-                                </div>
-                                <div class="right-card" style="border-top-color: var(--secondary);">
-                                    <h3><i class="fas fa-ban"></i> No Commercial Use</h3>
-                                    <p>We never sell or share your data with third parties</p>
-                                </div>
-                                <div class="right-card" style="border-top-color: var(--accent);">
-                                    <h3><i class="fas fa-flag"></i> Local Storage</h3>
-                                    <p>All data remains within Kenya unless legally required</p>
-                                </div>
-                            </div>
-                            <div class="notice-box" style="background-color: var(--accent-light); padding: 15px; border-radius: 6px; border-left: 4px solid var(--accent); margin-top: 20px;">
-                                <p><i class="fas fa-clock" style="color: var(--accent);"></i> Data is retained only during active membership or as legally required.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2><i class="fas fa-user-shield"></i> Your Rights</h2>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <div class="rights-grid">
-                                <div class="right-card">
-                                    <h3><i class="fas fa-search" style="color: var(--primary);"></i> Access</h3>
-                                    <p>Request a copy of your personal data</p>
-                                </div>
-                                <div class="right-card">
-                                    <h3><i class="fas fa-edit" style="color: var(--secondary);"></i> Correction</h3>
-                                    <p>Update inaccurate information</p>
-                                </div>
-                                <div class="right-card">
-                                    <h3><i class="fas fa-trash-alt" style="color: var(--accent);"></i> Erasure</h3>
-                                    <p>Request deletion of your data</p>
-                                </div>
-                                <div class="right-card">
-                                    <h3><i class="fas fa-exchange-alt" style="color: var(--primary);"></i> Portability</h3>
-                                    <p>Receive your data in transferable format</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact-section">
-                <h2><i class="fas fa-envelope"></i> Contact Our Data Officer</h2>
-                <p>For any questions about your data or to exercise your rights</p>
-                <a href="mailto:urbanswaras@outlook.com" class="contact-btn">
-                    Email Us <i class="fas fa-arrow-right"></i>
-                </a>
-                <div class="update-info">
-                    <i class="fas fa-sync-alt"></i> Last updated: May 16, 2025
-                </div>
-            </section>
-        </div>
-    </main>
-
+    </div> 
+    
 <footer class="site-footer">
     <div class="footer-container">
         <!-- Column 1: About -->
@@ -212,11 +286,11 @@
             <h3 class="footer-heading">Quick Links</h3>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html">Events Calendar</a></li>
-                <li><a href="members.html">New Members</a></li>
-                <li><a href="regulation.html">Club Rules</a></li>
-                <li><a href="data.html">Data Privacy</a></li>
-                <li><a href="contact.html">Contact Us </a></li>
+                <li><a href="calendar.html">Events</a></li>
+                <li><a href="members.html">Membership</a></li>
+                <li><a href="regulation.html">Governance</a></li>
+                <li><a href="data.html">Downloads</a></li>
+                <li><a href="contact.html">Contact </a></li>
                 <li><a href="#">Shop</a></li>
             </ul>
         </div>

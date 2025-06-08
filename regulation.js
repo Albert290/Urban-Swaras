@@ -44,3 +44,55 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+ // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll-animation class
+        document.querySelectorAll('.scroll-animation').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add stagger effect to committee members
+        document.addEventListener('DOMContentLoaded', function() {
+            const committeeMembers = document.querySelectorAll('.committee-member');
+            committeeMembers.forEach((member, index) => {
+                member.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const creMembers = document.querySelectorAll('.cre-member');
+            creMembers.forEach((member, index) => {
+                member.style.animationDelay = `${index * 0.05}s`;
+            });
+        });
+
+        // Smooth scroll for document links (when real links are added)
+        document.querySelectorAll('.document-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Add actual link functionality here when documents are ready
+                console.log('Document link clicked:', this.previousElementSibling.textContent);
+            });
+        });
+
+        // Add subtle parallax effect to floating icons
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-icon');
+            
+            parallax.forEach((icon, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                icon.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.01}deg)`;
+            });
+        });

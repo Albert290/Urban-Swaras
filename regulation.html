@@ -36,11 +36,11 @@
             <nav class="desktop-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="calendar.html">Calendar of Events</a></li>
-                    <li><a href="members.html">New Members</a></li>
-                    <li class="active"><a href="regulation.html">Club Regulations</a></li>
-                    <li><a href="data.html">Data Privacy</a></li>
-                    <li><a href="contact.html">Contact Us</a></li> 
+                    <li><a href="calendar.html">Events</a></li>
+                    <li class="active"><a href="regulation.html">Governance</a></li>
+                    <li><a href="members.html">Membership</a></li>
+                    <li><a href="data.html">Downloads</a></li>
+                    <li><a href="contact.html">Contact</a></li> 
                     <li><a href="#" title="Shop"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
@@ -54,11 +54,11 @@
         <div class="mobile-menu">
             <ul class="mobile-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html">Calendar of Events</a></li>
-                <li><a href="members.html">New Members</a></li>
-                <li><a href="regulation.html">Club Rules/Regulations</a></li>
-                <li><a href="data.html">Data Privacy</a></li>
-                <li><a href="contact.html">Contact Us</a></li> 
+                <li><a href="calendar.html">Events</a></li>
+                <li><a href="regulation.html">Governance</a></li>
+                <li><a href="members.html">Membership</a></li>
+                <li><a href="data.html">Downloads</a></li>
+                <li><a href="contact.html">Contact</a></li> 
                 <li><a href="#" title="Shop"><i class="fas fa-shopping-cart"></i> Shop</a></li>
             </ul>
         </div>
@@ -66,53 +66,517 @@
 
       
 
-<section class="documents-section">
-    <div class="container">
-        <h1>Club Documents</h1>
-        <p class="section-intro">All official Urban Swaras rules, newsletters, and training materials</p>
-        
-        <div class="documents-container">
-            <h2 class="document-category"><i class="fas fa-gavel"></i> Rules & Regulations</h2>
-            <ul class="document-list">
-                <li><a href="documents/USRC-Rules-and-Regulations-2019.pdf" target="_blank">Rules and Regulations of USRC <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-safety-and-security.pdf" target="_blank">Safety and security during club runs <span class="file-type">(PDF)</span></a></li>
-            </ul>
+<style>
+        :root {
+            --primary: #1F3C5F;
+            --secondary: #6BA2D9;
+            --accent: #F57C51;
+            --text: #333333;
+            --light-bg: #F5F5F5;
+            --white: #FFFFFF;
+        }
 
-            <h2 class="document-category"><i class="fas fa-newspaper"></i> Club Newsletters</h2>
-            <ul class="document-list">
-                <li><a href="/documents/USRC Newsletter 009_March 2021.pdf" target="_blank">Urban Swaras Running Club Newsletter, March 2021 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-November-2019.pdf" target="_blank">Urban Swaras Running Club Newsletter, November 2019 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC_Newsletter_August_2019.pdf" target="_blank">Urban Swaras Running Club Newsletter, August 2019 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-June-2019.pdf" target="_blank">Urban Swaras Running Club Newsletter, June 2019 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-March-2019.pdf" target="_blank">Urban Swaras Running Club Newsletter, March 2019 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-January-2019.pdf" target="_blank">Urban Swaras Running Club Newsletter, February 2019 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-December-2018.pdf" target="_blank">Urban Swaras Running Club Newsletter, December 2018 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-October-2018.pdf" target="_blank">Urban Swaras Running Club Newsletter, October 2018 <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/USRC-Newsletter-August-2018.pdf" target="_blank">Urban Swaras Running Club Newsletter, August 2018 <span class="file-type">(PDF)</span></a></li>
-                <!-- Add all other newsletter items here -->
-            </ul>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-            <h2 class="document-category"><i class="fas fa-running"></i> Training Programmes</h2>
-            <ul class="document-list">
-                <li><a href="documents/21km-Training-Program-StanChart-2018.pdf" target="_blank">Standard Chartered Nairobi Marathon 2018, 21km training programme <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/42km-Training-Program-StanChart-2018.pdf" target="_blank">Standard Chartered Nairobi Marathon 2018, 42km training programme <span class="file-type">(PDF)</span></a></li>
-            </ul>
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-            <h2 class="document-category"><i class="fas fa-map-marker-alt"></i> Thursday Track Sessions</h2>
-            <ul class="document-list">
-                <li><a href="documents/Thursday-Track-Sessions-info-sheet-JSC.pdf" target="_blank">Thursday Track Sessions info sheet – Jaffery Sports Club <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/Thursday-Track-Sessions-info-sheet-PSC.pdf" target="_blank">Thursday Track Sessions info sheet – Parklands Sports Club <span class="file-type">(PDF)</span></a></li>
-                <li><a href="documents/Thursday-Track-Sessions-info-sheet-IC.pdf" target="_blank">Thursday Track Sessions info sheet – Impala Club <span class="file-type">(PDF)</span></a></li>
-            </ul>
+        .governance-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .decorative-line {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+
+        .governance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .governance-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(31, 60, 95, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .governance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+
+        .governance-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(31, 60, 95, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .card-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .committee-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(31, 60, 95, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .committee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .committee-intro {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .committee-member {
+            background: linear-gradient(135deg, var(--light-bg), var(--white));
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .committee-member:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            background: var(--white);
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cre-section {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .cre-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cre-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cre-member {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .cre-member:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .agm-photo {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--light-bg);
+            border-radius: 15px;
+            border: 2px dashed var(--secondary);
+        }
+
+        .agm-placeholder {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .agm-text {
+            color: var(--text);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .documents-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .document-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(31, 60, 95, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 45px rgba(245, 124, 81, 0.2);
+        }
+
+        .document-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .document-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .document-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #ff6b35);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .document-link:hover::before {
+            left: 100%;
+        }
+
+        .document-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 124, 81, 0.3);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.05;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 25%; right: 15%; animation-delay: 3s; }
+        .floating-icon:nth-child(3) { bottom: 35%; left: 8%; animation-delay: 6s; }
+        .floating-icon:nth-child(4) { bottom: 15%; right: 12%; animation-delay: 2s; }
+        .floating-icon:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-3deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .governance-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .page-title {
+                font-size: 2.8rem;
+            }
+
+            .committee-section {
+                padding: 30px;
+            }
+
+            .committee-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .documents-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .governance-container {
+                padding: 20px 15px;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .governance-card {
+                padding: 25px;
+            }
+
+            .committee-section {
+                padding: 20px;
+            }
+
+            .committee-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cre-members {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-animation.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-icon">⚖️</div>
+        <div class="floating-icon">🏛️</div>
+        <div class="floating-icon">👥</div>
+        <div class="floating-icon">📋</div>
+        <div class="floating-icon">🗳️</div>
+    </div>
+
+    <div class="governance-container">
+        <div class="page-header scroll-animation"> 
+            <p class="page-subtitle">Transparent Leadership, Democratic Governance, Clear Vision</p>
+            <div class="decorative-line"></div>
         </div>
 
-         <div class="documents-notice">
-            <i class="fas fa-info-circle"></i>
-            <p>All documents open in a new tab as PDF files. Please contact the <a href="mailto:secretary@urbanswaras.co.ke">club secretary</a> if you need alternative formats.</p>
+        <div class="governance-grid">
+            <div class="governance-card scroll-animation">
+                <span class="card-icon">🎯</span>
+                <h2 class="card-title">Mission Statement</h2>
+                <p class="card-content">
+                    To inspire and support a diverse community of runners by promoting recreational running across Kenya. We aim to foster personal growth, fitness, and friendship through inclusive running experiences — while championing charitable causes that uplift communities and create lasting social impact.
+                </p>
+            </div>
+
+            <div class="governance-card scroll-animation">
+                <span class="card-icon">🌟</span>
+                <h2 class="card-title">Vision Statement</h2>
+                <p class="card-content">
+                    To be Kenya's leading recreational running club — empowering individuals to achieve their running goals, explore Kenya's scenic beauty, and build a vibrant, inclusive community. Through running, we envision transforming lives not only on the trail, but also through purposeful giving and meaningful support to charitable initiatives across the country.
+                </p>
+            </div>
+        </div>
+
+        <div class="committee-section scroll-animation">
+            <h2 class="section-title">Club Management Structure</h2>
+            <p class="committee-intro">
+                The Club is governed by a constitution, and managed by a committee elected every two years. The club committee includes a Patron, Chairperson, Treasurer, Co-ordinator/Secretary, Trail King, and members of the Calendar, Routes and Events (CRE) Committee. The CRE Committee sets the club's calendar on a biannual basis with upcoming races in mind when determining distances of each weekly run, and is assisted by volunteers from among the members in scouting for interesting running locations.
+            </p>
+
+            <div class="agm-photo">
+                <div class="agm-placeholder">📸</div>
+                <p class="agm-text">Photo of past AGM Event (To be provided by Davis)</p>
+            </div>
+
+            <h3 style="text-align: center; color: var(--primary); font-size: 2rem; margin-bottom: 30px;">Current Committee (2023-2025)</h3>
+
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <div class="member-role">Chairperson</div>
+                    <div class="member-name">Hon. Anthony Kiai</div>
+                </div>
+                <div class="committee-member">
+                    <div class="member-role">Treasurer</div>
+                    <div class="member-name">Gilbert Asamba</div>
+                </div>
+                <div class="committee-member">
+                    <div class="member-role">Coordinator/Secretary</div>
+                    <div class="member-name">Susan Okoma</div>
+                </div>
+                <div class="committee-member">
+                    <div class="member-role">Trail King</div>
+                    <div class="member-name">Joseph Masika</div>
+                </div>
+                <div class="committee-member">
+                    <div class="member-role">Trail Fox</div>
+                    <div class="member-name">Benjamin Chikani</div>
+                </div>
+            </div>
+
+            <div class="cre-section">
+                <h4 class="cre-title">Calendar, Routes and Events (CRE) Committee</h4>
+                <div class="cre-members">
+                    <span class="cre-member">Michael Nawari</span>
+                    <span class="cre-member">Shem Kiptoon</span>
+                    <span class="cre-member">Annika Berlin</span>
+                    <span class="cre-member">Carol Mungai</span>
+                    <span class="cre-member">Felicita Kagwanja</span>
+                    <span class="cre-member">Davis Gitari</span>
+                    <span class="cre-member">Joseph Gatonye</span>
+                    <span class="cre-member">Wanjau Muriu</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="documents-section">
+            <div class="document-card scroll-animation">
+                <div class="document-icon">📜</div>
+                <h3 class="document-title">Club Constitution</h3>
+                <p style="margin-bottom: 20px; color: var(--text);">
+                    Our governing document outlining the club's structure, member rights, and operational procedures.
+                </p>
+                <a href="documents/USRC CONSTITUTION (Updated 2023).pdf" class="document-link">View Constitution</a>
+            </div>
+
+            <div class="document-card scroll-animation">
+                <div class="document-icon">📋</div>
+                <h3 class="document-title">Rules & Regulations</h3>
+                <p style="margin-bottom: 20px; color: var(--text);">
+                    Detailed guidelines for club activities, member conduct, and operational standards.
+                </p>
+                <a href="documents/CLUB RULES AND REGULATIONS.PDF" class="document-link">View Rules</a>
+            </div>
         </div>
     </div>
-</section>
-
+ 
 <footer class="site-footer">
     <div class="footer-container">
         <!-- Column 1: About -->
@@ -132,11 +596,11 @@
             <h3 class="footer-heading">Quick Links</h3>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html">Events Calendar</a></li>
-                <li><a href="members.html">New Members</a></li>
-                <li><a href="regulation.html">Club Rules</a></li>
-                <li><a href="data.html">Data Privacy</a></li>
-                <li><a href="contact.html">Contact Us </a></li>
+                <li><a href="calendar.html">Events</a></li>
+                <li><a href="members.html">Membership</a></li>
+                <li><a href="regulation.html">Governance</a></li>
+                <li><a href="data.html">Downloads</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="#">Shop</a></li>
             </ul>
         </div>
