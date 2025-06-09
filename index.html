@@ -13,7 +13,7 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="next-event">
-            <span>Next event:</span> Charity Run: Sahihi Run, Cianda-Kiambu  24th May 2025
+            <span>Next event:</span> USRC June Celebration Run @ The Berra Lounge Hotel, Ngong  Saturday, June 14th, 2025
         </div>
         <div class="contact-social">
             <div class="phone">
@@ -29,46 +29,137 @@
     </div>
     
     <!-- Main Header -->
-    <header>
+    <header class="main-header">
         <div class="header-container">
-            <img src="images/swaras.jpg" alt="Urban Swaras Logo" class="logo">
+            <div class="logo-section">
+                <img src="images/swaras.jpg" alt="Urban Swaras Logo" class="logo">
+               
+            </div>
             
             <nav class="desktop-nav">
                 <ul class="nav-links">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="calendar.html">Events</a></li>
-                    <li><a href="regulation.html">Governance</a></li>
-                    <li><a href="members.html">Membership</a></li>
-                    <li><a href="data.html">Downloads</a></li>
-                    <li><a href="contact.html">Contact</a></li> 
-                    <li>
-    <a href="#" title="Shop" class="cart-with-badge">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-badge"></span> <!-- Dynamic number would go here -->
-    </a>
-</li>
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="calendar.html" class="nav-link">
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="regulation.html" class="nav-link">
+                            <span>Governance</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="members.html" class="nav-link">
+                            <span>Membership</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="data.html" class="nav-link">
+                            <span>Downloads</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                    <li class="nav-item cart-item">
+                        <a href="#" class="nav-link cart-link" title="Shop">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge">3</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div class="header-actions">
+                <button class="cta-button">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Become a Member</span>
+                </button>
+                
+                <button class="hamburger" id="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </div>
         
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+        
         <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <ul class="mobile-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html">Events</a></li>
-                <li><a href="regulation.html">Governance</a></li>
-                <li><a href="members.html">Membership</a></li>
-                <li><a href="data.html">Downloads</a></li>
-                <li><a href="contact.html">Contact</a></li> 
-                <li><a href="#" title="Shop"><i class="fas fa-shopping-cart"></i> Shop</a></li>
-            </ul>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h3>Menu</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="mobile-nav">
+                <ul class="mobile-links">
+                    <li class="mobile-item active">
+                        <a href="index.html" class="mobile-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a href="calendar.html" class="mobile-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a href="regulation.html" class="mobile-link">
+                            <i class="fas fa-gavel"></i>
+                            <span>Governance</span>
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a href="members.html" class="mobile-link">
+                            <i class="fas fa-users"></i>
+                            <span>Membership</span>
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a href="data.html" class="mobile-link">
+                            <i class="fas fa-download"></i>
+                            <span>Downloads</span>
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a href="contact.html" class="mobile-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a href="#" class="mobile-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Shop</span>
+                            <span class="mobile-cart-badge">3</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="mobile-cta">
+                    <button class="mobile-cta-button">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Become a Member</span>
+                    </button>
+                </div>
+            </nav>
         </div>
     </header>
-
+ 
    <section class="hero">
         <div class="floating-elements">
             <div class="floating-icon">🏃‍♂️</div>
@@ -78,7 +169,7 @@
         </div>
 
         <div class="hero-content">
-            <h1>Welcome to Urban Swaras</h1>
+            <h1>Welcome to Urban Swaras Running Club</h1>
             <p class="tagline">Nairobi's Premier Running Community Since 2006</p>
             <p class="main-description">
                 Based in Nairobi, we are a vibrant community of runners who meet every Saturday for organized runs in and around the city, as well as scenic out-of-town adventures across Kenya.
@@ -106,7 +197,7 @@
 
             <div class="cta-buttons">
                 <a href="members.html#memberform" class="btn primary">Become a Member</a>
-                <a href="guest.html" class="btn secondary">Join as Guest</a>
+                <a href="calendar.html" class="btn secondary">Register next event</a>
             </div>
 
             <div class="achievements">
@@ -213,41 +304,62 @@
         </div>
     </section>
 
-
-<div class="testimonials-section">
-        <h2 class="section-title">Reviews from Our Members</h2>
-        
-        <div class="slider-container">
-            <div class="slide active">
-                <div class="slide-number"> </div>
-                <button class="pause-btn" onclick="toggleAutoSlide()">⏸️ Pause</button>
-                <div class="running-icon">🏃‍♂️</div>
-                <div class="testimonial-content">
-                    <p >
-                        I joined Urban Swaras earlier this year, just hoping to spice up my running journey. Instead, I found a family that nudged me to be better. Members guided me into structured coaching, better running habits, and deeper discipline.
-                    </p>
-                    <p class="author">Pascal</p>
-                </div>
-            </div>
+<section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Reviews from Our Members</h2>
             
-            <div class="slide">
-                <div class="slide-number"> </div>
-                <button class="pause-btn" onclick="toggleAutoSlide()">⏸️ Pause</button>
-                <div class="running-icon">🏃‍♀️</div>
-                <div class="testimonial-content">
-                    <p  >
-                        When I joined the club, even 21km felt like a struggle. I never thought I could go beyond a half marathon — until a fellow Swara told me I was underrating myself. Seeing others push past limits, I had a wake-up call. Since then, I've run over twenty full marathons and a few ultras. This club has made running my lifestyle.
-                    </p>
-                    <p class="author">Davis</p>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <div class="runner-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <blockquote class="testimonial">
+                                "I joined Urban Swaras earlier this year, just hoping to spice up my running journey. Instead, I found a family that nudged me to be better. Members guided me into structured coaching, better running habits, and deeper discipline."
+                            </blockquote>
+                            <div class="author">
+                                <h4>Pascal</h4> s
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="runner-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <blockquote class="testimonial">
+                                "When I joined the club, even 21km felt like a struggle. I never thought I could go beyond a half marathon — until a fellow Swara told me I was underrating myself. Seeing others push past limits, I had a wake-up call. Since then, I've run over twenty full marathons and a few ultras. This club has made running my lifestyle."
+                            </blockquote>
+                            <div class="author">
+                                <h4>Davis</h4> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="slider-controls">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
+                
+                <div class="slider-controls">
+                    <button class="control-btn prev-btn" onclick="previousSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="control-btn pause-btn" onclick="toggleAutoplay()">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="control-btn next-btn" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="slide-indicators">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+ 
 
     
 
@@ -309,136 +421,379 @@
         </div>
     </div>
 </footer> 
-<script>
-        let slideIndex = 0;
-        let autoSlideInterval;
-        let isAutoSliding = true;
 
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const pauseBtn = document.querySelector('.pause-btn');
+ <script src="script.js"></script>
+<style>
+        /* Brand Colors */
+        :root {
+            --primary: #1F3C5F;
+            --secondary: #6BA2D9;
+            --accent: #F57C51;
+            --text: #333333;
+            --light-bg: #F5F5F5;
+            --white: #FFFFFF;
+            --whatsapp: #25D366;
+        }
 
-        function showSlide(index) {
-            // Remove active class from all slides and dots
-            slides.forEach(slide => {
-                slide.classList.remove('active', 'prev');
-            });
-            dots.forEach(dot => dot.classList.remove('active'));
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--whatsapp), #20b954);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: var(--white);
+            animation: pulse-whatsapp 2s ease-in-out infinite;
+        }
 
-            // Add prev class to current slide before switching
-            if (slides[slideIndex]) {
-                slides[slideIndex].classList.add('prev');
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #20b954, var(--whatsapp));
+        }
+
+        .whatsapp-float i {
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover i {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
             }
-
-            // Update slide index
-            slideIndex = index;
-
-            // Show new slide with animation
-            setTimeout(() => {
-                slides[slideIndex].classList.add('active');
-                dots[slideIndex].classList.add('active');
-            }, 100);
-
-            // Update slide numbers
-            document.querySelectorAll('.slide-number').forEach((num, i) => {
-                num.textContent = `${slideIndex + 1} / ${slides.length}`;
-            });
-        }
-
-        function nextSlide() {
-            const next = (slideIndex + 1) % slides.length;
-            showSlide(next);
-        }
-
-        function currentSlide(index) {
-            showSlide(index - 1);
-            resetAutoSlide();
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
-
-        function resetAutoSlide() {
-            if (isAutoSliding) {
-                stopAutoSlide();
-                startAutoSlide();
+            50% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
             }
         }
 
-        function toggleAutoSlide() {
-            if (isAutoSliding) {
-                stopAutoSlide();
-                isAutoSliding = false;
-                pauseBtn.innerHTML = '▶️ Play';
-                pauseBtn.style.background = 'rgba(245, 124, 81, 0.3)';
+        /* WhatsApp Tooltip */
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(31, 60, 95, 0.3);
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 8px solid transparent;
+            border-left-color: var(--primary);
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) translateX(-10px);
+        }
+
+        /* WhatsApp Header Integration */
+        .whatsapp-header-btn {
+            background: linear-gradient(135deg, var(--whatsapp), #20b954);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-header-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #20b954, var(--whatsapp));
+        }
+
+        .whatsapp-header-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* WhatsApp Section Integration */
+        .whatsapp-section {
+            background: linear-gradient(135deg, var(--light-bg), var(--white));
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .whatsapp-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .whatsapp-section h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .whatsapp-section p {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, var(--whatsapp), #20b954);
+            color: var(--white);
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .whatsapp-cta:hover::before {
+            left: 100%;
+        }
+
+        .whatsapp-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #20b954, var(--whatsapp));
+        }
+
+        .whatsapp-cta i {
+            font-size: 1.5rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.6rem;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+
+            .whatsapp-header-btn span {
+                display: none;
+            }
+
+            .whatsapp-header-btn {
+                padding: 10px 12px;
+                border-radius: 50%;
+                width: 44px;
+                height: 44px;
+                justify-content: center;
+            }
+
+            .whatsapp-section h3 {
+                font-size: 1.6rem;
+            }
+
+            .whatsapp-section p {
+                font-size: 1rem;
+            }
+
+            .whatsapp-cta {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Demo body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--light-bg);
+            height: 200vh; /* For demo scrolling */
+        }
+
+        .demo-content {
+            padding: 100px 20px;
+            text-align: center;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body> 
+
+    <!-- Option 3: Floating WhatsApp Button (Always Visible) -->
+    <a href="https://wa.me/254740894117?text=Hi%20Urban%20Swaras!%20I'm%20interested%20in%20learning%20more%20about%20the%20running%20club." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact us on WhatsApp">
+        <div class="whatsapp-tooltip">Chat with us!</div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // WhatsApp Analytics Tracking (Optional)
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Track WhatsApp clicks
+                console.log('WhatsApp contact initiated');
+                
+                // You can add Google Analytics or other tracking here
+                // gtag('event', 'whatsapp_contact', {
+                //     'event_category': 'contact',
+                //     'event_label': 'whatsapp_click'
+                // });
+            });
+        });
+
+        // Show/hide floating button based on scroll (Optional)
+        let lastScrollTop = 0;
+        const whatsappFloat = document.querySelector('.whatsapp-float');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                whatsappFloat.style.opacity = '1';
+                whatsappFloat.style.visibility = 'visible';
             } else {
-                startAutoSlide();
-                isAutoSliding = true;
-                pauseBtn.innerHTML = '⏸️ Pause';
-                pauseBtn.style.background = 'rgba(255, 255, 255, 0.2)';
-            }
-        }
-
-        // Initialize
-        startAutoSlide();
-
-        // Pause on hover
-        document.querySelector('.slider-container').addEventListener('mouseenter', () => {
-            if (isAutoSliding) stopAutoSlide();
-        });
-
-        document.querySelector('.slider-container').addEventListener('mouseleave', () => {
-            if (isAutoSliding) startAutoSlide();
-        });
-
-        // Add touch/swipe support for mobile
-        let startX = 0;
-        let endX = 0;
-
-        document.querySelector('.slider-container').addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        document.querySelector('.slider-container').addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const difference = startX - endX;
-            if (Math.abs(difference) > 50) { // Minimum swipe distance
-                if (difference > 0) {
-                    // Swipe left - next slide
-                    nextSlide();
-                } else {
-                    // Swipe right - previous slide
-                    const prev = slideIndex === 0 ? slides.length - 1 : slideIndex - 1;
-                    showSlide(prev);
-                }
-                resetAutoSlide();
-            }
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                const prev = slideIndex === 0 ? slides.length - 1 : slideIndex - 1;
-                showSlide(prev);
-                resetAutoSlide();
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-                resetAutoSlide();
-            } else if (e.key === ' ') {
-                e.preventDefault();
-                toggleAutoSlide();
+                whatsappFloat.style.opacity = '0.7';
             }
         });
     </script>
- <script src="script.js"></script>
+
+ <script>
+        let currentSlide = 0;
+        let isPlaying = true;
+        let slideInterval;
+        
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const pauseBtn = document.querySelector('.pause-btn i');
+        
+        function showSlide(index) {
+            // Remove active class from all slides and indicators
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active class to current slide and indicator
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+        
+        function previousSlide() {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+        
+        function goToSlide(index) {
+            showSlide(index);
+        }
+        
+        function startAutoplay() {
+            slideInterval = setInterval(nextSlide, 3000);
+        }
+        
+        function stopAutoplay() {
+            clearInterval(slideInterval);
+        }
+        
+        function toggleAutoplay() {
+            if (isPlaying) {
+                stopAutoplay();
+                pauseBtn.className = 'fas fa-play';
+                isPlaying = false;
+            } else {
+                startAutoplay();
+                pauseBtn.className = 'fas fa-pause';
+                isPlaying = true;
+            }
+        }
+        
+        // Initialize autoplay
+        startAutoplay();
+        
+        // Pause on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            if (isPlaying) stopAutoplay();
+        });
+        
+        sliderContainer.addEventListener('mouseleave', () => {
+            if (isPlaying) startAutoplay();
+        });
+    </script>
 </body>
 </html>

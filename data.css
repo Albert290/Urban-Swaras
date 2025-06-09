@@ -6,12 +6,6 @@
             --light-bg: #F5F5F5;
             --white: #FFFFFF;
 }
-
-.scrolling-section {
-    position: relative;
-    z-index: 1;
-}
-
         
 * {
             margin: 0;
@@ -71,7 +65,8 @@
 /* Main Header */
 header {
             background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
             top: 0;
             z-index: 100;
 }
@@ -123,6 +118,109 @@ header {
             width: 100%;
             height: 2px;
             background-color: var(--accent);
+}
+
+/* Cart Link Special Styling */
+.cart-item .nav-link {
+    position: relative;
+    padding: 12px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    transition: all 0.3s ease;
+}
+
+.cart-item .nav-link:hover {
+    background: var(--secondary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+ 
+
+.cta-button {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: var(--white);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(107, 162, 217, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(107, 162, 217, 0.5);
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(107, 162, 217, 0.3);
+}
+
+.cta-button i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+    transform: scale(1.1);
+}
+
+.cta-button span {
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
 }
         
 /* Mobile Menu Styles */
@@ -282,68 +380,7 @@ header {
                 margin: 0 8px;
             }
 }
-
-:root {
-            --primary: #1F3C5F;
-            --primary-light: rgba(31, 60, 95, 0.08);
-            --secondary: #6BA2D9;
-            --secondary-light: rgba(107, 162, 217, 0.1);
-            --accent: #F57C51;
-            --accent-light: rgba(245, 124, 81, 0.1);
-            --text: #333333;
-            --text-light: #666666;
-            --light-bg: #F5F5F5;
-            --white: #FFFFFF;
-            --border: rgba(107, 162, 217, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-
-        }
-
-        /* Shopping cart icon styles */
-.nav-links li a i.fa-shopping-cart {
-    font-size: 1.1rem;
-    vertical-align: middle;
-}
-
-.mobile-links li a i.fa-shopping-cart {
-    margin-right: 8px;
-    font-size: 1.1rem;
-}
-
-/* Optional: Add a badge for cart items */
-.cart-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: var(--accent);
-    color: white;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* If you want to add a badge later */
-.nav-links li .cart-with-badge {
-    position: relative;
-    display: inline-block;
-}
+ 
 
 /* Urban Swaras Downloads Page Styles */
 :root {
